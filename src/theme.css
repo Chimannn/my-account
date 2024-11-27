@@ -1,0 +1,4 @@
+/* 重设/覆盖 antd-mobile 提供的全局css变量 */
+:root:root {
+    --adm-color-primary: rgb(105,174,120)
+}
