@@ -1,0 +1,15 @@
+.layout {
+    .container {
+        position: fixed;
+        top: 0;
+        bottom: 50px;
+    }
+    .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+}
+.adm-tab-bar-item-active {
+    color: rgb(105, 174, 120) !important;
+}

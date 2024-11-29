@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router";
 import Layout from "@/pages/Layout";
 import New from "@/pages/New";
 import Month from "@/pages/Month";
@@ -12,6 +12,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/month",
+                index: true,
                 element: <Month />
             },
             {
