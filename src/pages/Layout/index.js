@@ -40,6 +40,7 @@ const Layout = () => {
     }
     useEffect(() => {
         dispatch(getBillList())
+        setRouteActive('/month')
     }, [dispatch])
     return (
         <div className="layout">
