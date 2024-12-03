@@ -4,10 +4,11 @@ import { useState } from 'react';
 import classNames from 'classnames';
 import dayjs from 'dayjs';
 import { useSelector } from 'react-redux';
-import { useMemo } from 'react';
+import { useMemo, useEffect } from 'react';
 import _ from 'lodash';
 
 const Month = () => {
+    
     const billList = useSelector(state => state.bill.billList);
 
     const [dateVisible, setDateVisible] = useState(false);
@@ -30,6 +31,10 @@ const Month = () => {
         }
     }, [currentMonthList])
     
+    useEffect(() => {
+        const formatDate = dayjs(new Date()).format("YYYY-MM")
+        setCurrentMonthList(monthGroup[formatDate] || [])
+    }, [monthGroup])
     
     const onConfirm = (date) => {
         const formatDate = dayjs(date).format("YYYY-MM")
