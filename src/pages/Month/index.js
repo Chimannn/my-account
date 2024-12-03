@@ -3,14 +3,37 @@ import { NavBar, DatePicker } from 'antd-mobile';
 import { useState } from 'react';
 import classNames from 'classnames';
 import dayjs from 'dayjs';
+import { useSelector } from 'react-redux';
+import { useMemo } from 'react';
+import _ from 'lodash';
 
 const Month = () => {
+    const billList = useSelector(state => state.bill.billList);
+
     const [dateVisible, setDateVisible] = useState(false);
+    const [currentMonthList, setCurrentMonthList] = useState([]);
     const [currentDate, setCurrentDate ] = useState(() => {
         return dayjs(new Date()).format("YYYY-MM")
     });
+
+    const monthGroup = useMemo(() => {
+        return _.groupBy(billList, (item) => dayjs(item.date).format("YYYY-MM"))
+    }, [billList])
+
+    const monthResult = useMemo(() => {
+        const pay = currentMonthList.reduce((a,c) => c.type === 'pay' ? a+c.money : a, 0)
+        const income = currentMonthList.reduce((a,c) => c.type === 'income' ? a+c.money : a, 0)
+        return {
+            pay,
+            income,
+            total: income + pay
+        }
+    }, [currentMonthList])
+    
+    
     const onConfirm = (date) => {
         const formatDate = dayjs(date).format("YYYY-MM")
+        setCurrentMonthList(monthGroup[formatDate] || [])
         setCurrentDate(formatDate);
         setDateVisible(false)
     }
@@ -27,15 +50,15 @@ const Month = () => {
                     </div>
                     <div className="twoLineOverview">
                         <div className="item">
-                            <span className="money">{100}</span>
+                            <span className="money">{monthResult.pay.toFixed(2)}</span>
                             <span className="type">支出</span>
                         </div>
                         <div className="item">
-                            <span className="money">{200}</span>
+                            <span className="money">{monthResult.income.toFixed(2)}</span>
                             <span className="type">收入</span>
                         </div>
                         <div className="item">
-                            <span className="money">{200}</span>
+                            <span className="money">{monthResult.total.toFixed(2)}</span>
                             <span className="type">结余</span>
                         </div>
                     </div>
