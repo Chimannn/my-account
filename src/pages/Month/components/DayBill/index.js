@@ -9,8 +9,8 @@ const DayBill = ({date, billList}) => {
 
     //计算子组件数据
     const dayResult = useMemo(() => {
-        const pay = billList.reduce((acc, item) => item.type === 'pay' ? acc + item.money : acc, 0)
-        const income = billList.reduce((acc, item) => item.type === 'income' ? acc + item.money : acc, 0)
+        const pay = billList.reduce((acc, item) => item.type === 'pay' ? acc + parseFloat(item.money) : acc, 0)
+        const income = billList.reduce((acc, item) => item.type === 'income' ? acc + parseFloat(item.money) : acc, 0)
         
         return {
             pay,
@@ -53,7 +53,7 @@ const DayBill = ({date, billList}) => {
                                     <div className="billType">{billTypeToName[item.useFor]}</div>
                                 </div>
                                 <div className={classNames('money', item.type)}>
-                                    {item.money.toFixed(2)}
+                                    {parseFloat(item.money).toFixed(2)}
                                 </div>
                             </div>
                         )

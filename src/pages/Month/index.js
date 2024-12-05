@@ -24,8 +24,8 @@ const Month = () => {
     }, [billList])
 
     const monthResult = useMemo(() => {
-        const pay = currentMonthList.reduce((a,c) => c.type === 'pay' ? a+c.money : a, 0)
-        const income = currentMonthList.reduce((a,c) => c.type === 'income' ? a+c.money : a, 0)
+        const pay = currentMonthList.reduce((a,c) => c.type === 'pay' ? a+parseFloat(c.money) : a, 0)
+        const income = currentMonthList.reduce((a,c) => c.type === 'income' ? a+parseFloat(c.money) : a, 0)
         return {
             pay,
             income,
