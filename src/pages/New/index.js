@@ -1,4 +1,4 @@
-import { Button, DatePicker, Input, NavBar } from 'antd-mobile'
+import { Button, DatePicker, Input, NavBar, Toast } from 'antd-mobile'
 import Icon from '@/components/Icon'
 import './index.scss'
 import classNames from 'classnames'
@@ -33,13 +33,26 @@ const New = () => {
       useFor: useFor
     }
     dispatch(addBillList(data))
+    setMoney(0)
+    setBillType('pay')
+    setUseFor(0)
+    setDate(dayjs(new Date()).format("YYYY-MM-DD"))
+    Toast.show({
+      content: "添加成功！"
+    })
   }
 
   const handleBlur = () => {
     if(money === '') {
       setMoney(0)
     }else {
-      setMoney(String(money).replace(/^0+/, ''))
+      let value = String(money)
+      // 去掉小数点后无用的0
+      value = value.replace(/(\.0+|(\.\d+?)0+)$/, '$1');
+      // 去掉整数部分前无用的0，但保留一个0开头的整数（如01）
+      value = value.replace(/^0+(?=\d)/, '');
+      // 更新输入框的值
+      setMoney(value)
     }
   }
 

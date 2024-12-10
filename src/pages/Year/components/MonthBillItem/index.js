@@ -6,9 +6,8 @@ import Icon from '@/components/Icon';
 
 const MonthBillItem = ({date, billList}) => {
     const [showDetail, setShowDetail] = useState(false)
-
     //计算子组件数据
-    const dayResult = useMemo(() => {
+    const monthResult = useMemo(() => {
         const pay = billList.reduce((acc, item) => item.type === 'pay' ? acc + parseFloat(item.money) : acc, 0)
         const income = billList.reduce((acc, item) => item.type === 'income' ? acc + parseFloat(item.money) : acc, 0)
         
@@ -29,20 +28,20 @@ const MonthBillItem = ({date, billList}) => {
                 <div className="oneLineOverview">
                     <div className="pay">
                         <span className="type">支出</span>
-                        <span className="money">{dayResult.pay.toFixed(2)}</span>
+                        <span className="money">{monthResult.pay.toFixed(2)}</span>
                     </div>
                     <div className="income">
                         <span className="type">收入</span>
-                        <span className="money">{dayResult.income.toFixed(2)}</span>
+                        <span className="money">{monthResult.income.toFixed(2)}</span>
                     </div>
                     <div className="balance">
-                        <span className="money">{dayResult.total.toFixed(2)}</span>
+                        <span className="money">{monthResult.total.toFixed(2)}</span>
                         <span className="type">结余</span>
                     </div>
                 </div>
             </div>
 
-            {/* 单日列表 */}
+            {/* 单月列表 */}
             {   showDetail && 
                 <div className="billList">
                     {billList.map(item => {

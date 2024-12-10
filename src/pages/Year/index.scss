@@ -17,28 +17,31 @@
     }
   
     .content {
-      height: 100%;
-      padding: 0 10px;
-      overflow-y: scroll;
-      -ms-overflow-style: none; /* Internet Explorer 10+ */
-      scrollbar-width: none; /* Firefox */
-      &::-webkit-scrollbar {
-        display: none; /* Safari and Chrome */
-      }
-  
-      > .header {
-        height: 135px;
-        padding: 20px 20px 0px 18.5px;
-        margin-bottom: 10px;
+        height: 100%;
+        padding: 0 10px;
+        overflow-y: scroll;
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+        scrollbar-width: none; /* Firefox */
+        &::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+        background-color: #f0f0f0;
         background-image: url(https://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/reactbase/ka/month-bg.png);
-        background-size: 100% 100%;
-  
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: 100% 30%;
+        background-attachment: fixed;
+        > .header {
+            height: 105px;
+            padding: 20px 20px 0px 18.5px;
+            margin-bottom: 10px;
+            background-size: 100% 100%;
         .date {
           display: flex;
           align-items: center;
           margin-bottom: 25px;
           font-size: 16px;
-  
+          justify-content: center;
           .arrow {
             display: inline-block;
             width: 7px;

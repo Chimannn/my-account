@@ -139,6 +139,153 @@
       "money": "1660",
       "date": "2024-12-05",
       "useFor": "cashgift"
+    },
+    {
+      "id": "7419",
+      "type": "pay",
+      "money": -1020,
+      "date": "2024-11-09T16:00:00.000Z",
+      "useFor": "audio"
+    },
+    {
+      "id": "8c33",
+      "type": "pay",
+      "money": -1020,
+      "date": "2024-11-09T16:00:00.000Z",
+      "useFor": "audio"
+    },
+    {
+      "id": "3df9",
+      "type": "pay",
+      "money": -1020,
+      "date": "2024-11-09T16:00:00.000Z",
+      "useFor": "audio"
+    },
+    {
+      "id": "a0af",
+      "type": "pay",
+      "money": -1020,
+      "date": "2024-11-09T16:00:00.000Z",
+      "useFor": "book"
+    },
+    {
+      "id": "fe4f",
+      "type": "pay",
+      "money": -1020,
+      "date": "2024-11-09T16:00:00.000Z",
+      "useFor": "book"
+    },
+    {
+      "id": "943c",
+      "type": "pay",
+      "money": -1020,
+      "date": "2024-11-09T16:00:00.000Z",
+      "useFor": "book"
+    },
+    {
+      "id": "c3f2",
+      "type": "pay",
+      "money": -1020,
+      "date": "2024-11-09T16:00:00.000Z",
+      "useFor": "book"
+    },
+    {
+      "id": "924b",
+      "type": "pay",
+      "money": -1020,
+      "date": "2024-11-09T16:00:00.000Z",
+      "useFor": "book"
+    },
+    {
+      "id": "ff2a",
+      "type": "pay",
+      "money": -1020,
+      "date": "2024-11-09T16:00:00.000Z",
+      "useFor": "book"
+    },
+    {
+      "id": "df1a",
+      "type": "pay",
+      "money": -1020,
+      "date": "2024-11-09T16:00:00.000Z",
+      "useFor": "book"
+    },
+    {
+      "id": "5186",
+      "type": "pay",
+      "money": -1020,
+      "date": "2024-11-09T16:00:00.000Z",
+      "useFor": "book"
+    },
+    {
+      "id": "f61f",
+      "type": "income",
+      "money": "1020",
+      "date": "2024-11-09T16:00:00.000Z",
+      "useFor": "book"
+    },
+    {
+      "id": "122b",
+      "type": "income",
+      "money": "1020",
+      "date": "2024-11-09T16:00:00.000Z",
+      "useFor": "overtimepay"
+    },
+    {
+      "id": "8ba8",
+      "type": "income",
+      "money": "1020",
+      "date": "2024-11-09T16:00:00.000Z",
+      "useFor": "overtimepay"
+    },
+    {
+      "id": "56c2",
+      "type": "pay",
+      "money": -0.1,
+      "date": "2024-10-09T16:00:00.000Z",
+      "useFor": "drinks"
+    },
+    {
+      "id": "8368",
+      "type": "pay",
+      "money": -123.1230001,
+      "date": "2024-12-10",
+      "useFor": 0
+    },
+    {
+      "id": "dbcc",
+      "type": "pay",
+      "money": -0.11,
+      "date": "2024-12-10",
+      "useFor": 0
+    },
+    {
+      "id": "2b02",
+      "type": "pay",
+      "money": -0.1,
+      "date": "2024-12-10",
+      "useFor": "clothes"
+    },
+    {
+      "id": "6ee7",
+      "type": "pay",
+      "money": -123,
+      "date": "2023-12-09T16:00:00.000Z",
+      "useFor": "clothes"
+    },
+    {
+      "id": "4fbb",
+      "type": "pay",
+      "money": -33,
+      "date": "2023-11-09T16:00:00.000Z",
+      "useFor": "clothes"
+    },
+    {
+      "id": "943a",
+      "type": "pay",
+      "money": -333,
+      "date": "2023-10-09T16:00:00.000Z",
+      "useFor": "home"
     }
   ]
 }
